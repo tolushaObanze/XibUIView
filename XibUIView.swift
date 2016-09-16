@@ -25,11 +25,11 @@ class XibUIView : UIView {
     
     init?(coder aDecoder: NSCoder, xibIdentifier: String) {
         super.init(coder: aDecoder)
-        
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.contentView = loadContentView(xibIdentifier)
         self.addSubview(self.contentView!)
         
-        setupContentViewConstraints()
+       setupContentViewConstraints()
         
     }
     required init?(coder aDecoder: NSCoder) {
@@ -39,9 +39,9 @@ class XibUIView : UIView {
      private func setupContentViewConstraints() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
-        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
-        contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        contentView.topAnchor.constraint(equalTo: self.topAnchor)
-        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
 }
