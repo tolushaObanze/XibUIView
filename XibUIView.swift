@@ -25,7 +25,7 @@ class XibUIView : UIView {
     
     init?(coder aDecoder: NSCoder, xibIdentifier: String) {
         super.init(coder: aDecoder)
-        self.translatesAutoresizingMaskIntoConstraints = false
+        
         self.contentView = loadContentView(xibIdentifier)
         self.addSubview(self.contentView!)
         
