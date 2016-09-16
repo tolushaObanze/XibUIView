@@ -11,4 +11,6 @@ required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder, xibIdentifier: "YourCustomClassXibName")
 }
 ```
+Ofcourse subclass must be File's Owner of `.xib` file.
+And also, when you setup `UIView` in Storyboard, you must set the class of `UIView` to your Custom `XibUIView` subclass.
 
