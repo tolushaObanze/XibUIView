@@ -25,13 +25,27 @@ class XibUIView : UIView {
     
     init?(coder aDecoder: NSCoder, xibIdentifier: String) {
         super.init(coder: aDecoder)
-        
         self.contentView = loadContentView(xibIdentifier)
         self.addSubview(self.contentView!)
         
        setupContentViewConstraints()
         
     }
+    
+    init(frame: CGRect, xibIdentifier: String) {
+        super.init(frame: frame)
+        
+        self.contentView = loadContentView(xibIdentifier)
+        self.addSubview(self.contentView!)
+        
+        setupContentViewConstraints()
+    }
+    
+    override init(frame: CGRect) {
+        fatalError("Subclasses must use following initializer: init(frame:)")
+    }
+    
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("Subclasses must use following initializer: init?(coder: NSCoder, xibIdentifier: String)")
     }
